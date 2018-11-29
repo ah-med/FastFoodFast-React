@@ -1,0 +1,30 @@
+{
+  "name": "fastfoodfast-react",
+  "version": "1.0.0",
+  "description": "A fast food application built with React/Redux that allows users to place food orders and have them delivered to their address",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ah-med/FastFoodFast-React.git"
+  },
+  "keywords": [
+    "react",
+    "fastfoodfast",
+    "redux"
+  ],
+  "author": "Ahmed Omosanya",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ah-med/FastFoodFast-React/issues"
+  },
+  "homepage": "https://github.com/ah-med/FastFoodFast-React#readme",
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/preset-env": "^7.1.6",
+    "@babel/preset-react": "^7.0.0"
+  }
+}
