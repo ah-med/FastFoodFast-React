@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development",
-    "eslint": "./node_modules/eslint/bin/eslint.js './**/*.js'",
+    "eslint": "./node_modules/eslint/bin/eslint.js './**/*.js' './**/*.jsx'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,21 +30,32 @@
     "@babel/preset-react": "^7.0.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.2",
+    "babel-plugin-transform-regenerator": "^6.26.0",
     "css-loader": "^1.0.0",
     "eslint": "^5.11.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-react": "^7.11.1",
+    "file-loader": "^3.0.1",
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.8"
+    "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
     "@types/react-dom": "^16.0.11",
+    "axios": "^0.18.0",
+    "babel-polyfill": "^6.26.0",
+    "history": "^4.7.2",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
-    "react-hot-loader": "^4.3.11"
+    "react-hot-loader": "^4.3.11",
+    "react-redux": "^6.0.0",
+    "react-router-dom": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-immutable-state-invariant": "^2.1.0",
+    "redux-thunk": "^2.3.0"
   }
 }

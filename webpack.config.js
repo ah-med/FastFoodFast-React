@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/index.js',
+  entry: ['babel-polyfill', './src/index.js'],
   mode: 'development',
   module: {
     rules: [
@@ -15,7 +15,18 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      }
+      },
+      {
+        test: /\.(png|PNG|jpg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              outputPath: 'images',
+            },
+          },
+        ],
+      },
     ]
   },
   resolve: { extensions: ['*', '.js', '.jsx'] },
@@ -27,7 +38,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'client/'),
     port: 3000,
-    publicPath: 'http://localhost:3000/dist/',
+    publicPath: '/dist/',
+    historyApiFallback: true,
     hotOnly: true
   },
   plugins: [new webpack.HotModuleReplacementPlugin()]
