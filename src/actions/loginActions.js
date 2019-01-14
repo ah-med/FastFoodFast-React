@@ -6,7 +6,6 @@ import {
     parseJwt, 
     setUserData 
 } from '../utilities/auth';
-
 import {
     LOADING_START,
     LOADING_STOP,
@@ -33,18 +32,17 @@ const authError = (error) => {
     }
 };
 
-const signupUser = (userData, history) => async (dispatch) => {
+
+
+const loginUser = (userData, history) => async (dispatch) => {
     dispatch(startLoading);
     try {
-        const signupResponse = await axios.post(`${baseUrl}/api/v1/auth/signup`, userData);
-        if (signupResponse.status === 201) {
-            const loginResponse = await axios.post(`${baseUrl}/api/v1/auth/login`, userData);
-            dispatch(stopLoading);
-            dispatch(isAuthenticated);
-            setUserData(loginResponse.data.data.token);
-            const { role } =  parseJwt(loginResponse.data.data.token);
-            reDirectLogin(role, history);
-        }
+        const response = await axios.post(`${baseUrl}/api/v1/auth/login`, userData);
+        dispatch(stopLoading);
+        dispatch(isAuthenticated);
+        setUserData(response.data.data.token);
+        const { role } =  parseJwt(response.data.data.token);
+        reDirectLogin(role, history);
     }
     catch (error) {
         dispatch(stopLoading);
@@ -53,4 +51,4 @@ const signupUser = (userData, history) => async (dispatch) => {
     }
 }
 
-export default signupUser;
+export default loginUser;
