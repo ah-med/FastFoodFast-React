@@ -6,7 +6,9 @@
   "scripts": {
     "start": "webpack-dev-server --mode development",
     "eslint": "./node_modules/eslint/bin/eslint.js './**/*.js' './**/*.jsx'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage --colors"
   },
   "repository": {
     "type": "git",
@@ -24,10 +26,11 @@
   },
   "homepage": "https://github.com/ah-med/FastFoodFast-React#readme",
   "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/preset-react": "^7.0.0",
+    "@babel/core": "7.0.0",
+    "@babel/polyfill": "^7.0.0-beta.51",
+    "@babel/preset-env": "^7.0.0-beta.51",
+    "@babel/preset-react": "^7.0.0-beta.51",
+    "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^8.0.2",
     "babel-plugin-transform-regenerator": "^6.26.0",
@@ -41,7 +44,9 @@
     "style-loader": "^0.23.0",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.1",
-    "webpack-dev-server": "^3.1.14"
+    "webpack-dev-server": "^3.1.14",
+    "babel-jest": "^23.4.2",
+    "jest": "^24.0.0"
   },
   "dependencies": {
     "@types/react-dom": "^16.0.11",
@@ -57,6 +62,8 @@
     "redux": "^4.0.1",
     "redux-immutable-state-invariant": "^2.1.0",
     "redux-thunk": "^2.3.0",
-    "toastr": "^2.1.4"
+    "toastr": "^2.1.4",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1"
   }
 }
