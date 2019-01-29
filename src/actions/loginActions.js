@@ -1,5 +1,4 @@
-import axios from 'axios'
-import baseUrl from './constants';
+import { Post } from '../utilities/axiosRequests';
 import closeAlert from './alertActions';
 import { 
     reDirectLogin, 
@@ -37,11 +36,11 @@ const authError = (error) => {
 const loginUser = (userData, history) => async (dispatch) => {
     dispatch(startLoading);
     try {
-        const response = await axios.post(`${baseUrl}/api/v1/auth/login`, userData);
+        const response = await Post('/api/v1/auth/login', userData);
         dispatch(stopLoading);
         dispatch(isAuthenticated);
-        setUserData(response.data.data.token);
-        const { role } =  parseJwt(response.data.data.token);
+        setUserData(response.data.token);
+        const { role } =  parseJwt(response.data.token);
         reDirectLogin(role, history);
     }
     catch (error) {
