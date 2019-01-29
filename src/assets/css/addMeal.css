@@ -1,0 +1,93 @@
+body {
+    max-height: 100vh;
+}
+.addMealPage .text-center {
+    text-align: center;
+}
+.addMealPage #main .container:first-child {
+    width: 60%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    padding-right: 40px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5)
+}
+.addMealPage #uploaded {
+    border-radius: 5%;
+    max-width: 300px;
+    max-height: 300px;
+    border: 1px solid #ffffff9e;
+}
+.addMealPage #auth {
+    border: 1px solid #fe8e07;
+    padding: 5px 10px;
+}
+/** Form **/
+.addMealPage  form {
+    margin: 0 auto;
+    padding: 20px;    
+    display: flex;
+    flex-direction: row-reverse;
+}
+.addMealPage  .form-right, .form-left {
+    width: 50%;
+}
+.addMealPage .form-right .image-item {
+    margin: 0 auto;
+    width: 100%;
+}
+.addMealPage .form-item {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.addMealPage  .form-input, .form-btn {
+    margin-top: 12px;
+    padding: 8px;
+    width: 80%;
+}
+.addMealPage  select:focus {
+    outline-color: #fe8e07;
+}
+.addMealPage  .form-btn {
+    background-color: yellowgreen;
+    width: 50%;
+    border: none;
+    font-size: 17px;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 14px 14px;
+    width: 150px;    
+    cursor: pointer;
+}
+.addMealPage  .form-btn:hover {
+    background-color: rgb(52, 141, 52);
+}
+.addMealPage  #add-details h3 {
+    color: #fe8e07;
+    font-family: cursive;
+}
+div + #signup-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Medium devices (landscape tablets, 768px and down) */
+@media only screen and (max-width: 768px) {
+    .addMealPage  form {
+        margin: 0 auto;
+        padding: 20px;    
+        display: flex;
+        flex-direction: column;
+    }
+    .addMealPage footer {
+        position: relative;
+        width: inherit;
+    }
+    .addMealPage #uploaded {
+        border-radius: 5%;
+        max-width: 150px;
+        max-height: 150px;
+        border: 1px solid #ffffff9e;
+    }
+}

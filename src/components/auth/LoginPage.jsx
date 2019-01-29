@@ -25,7 +25,7 @@ const LoginPage = (props) => {
             <NavBar />
             <section id="signup">
                 <Form formName="login-form" handleFormSubmit={submitLoginForm}>
-                    <h3 className="text-center">Create an account</h3>
+                    <h3 className="text-center">Login</h3>
                     <FormInput
                         labelName="Email"
                         inputType="email"
@@ -40,8 +40,8 @@ const LoginPage = (props) => {
                     />
                     <SubmitButton buttonValue="Login" />
                     <div className="text-center">
-                        <p>Do not have an account ?
-                        <Link className="orange" to="/signup"> Sign up</Link>
+                        <p>Already have an account ?
+                        <Link className="orange" to="/signup"> Sign up </Link>
                         </p>
                     </div>
                 </Form>
