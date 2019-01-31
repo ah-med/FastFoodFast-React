@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const HtmlwebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: ['babel-polyfill', './src/index.js'],
@@ -32,7 +33,7 @@ module.exports = {
   resolve: { extensions: ['*', '.js', '.jsx'] },
   output: {
     path: path.resolve(__dirname, 'dist/'),
-    publicPath: '/dist/',
+    publicPath: '/',
     filename: 'bundle.js'
   },
   devServer: {
@@ -42,5 +43,10 @@ module.exports = {
     historyApiFallback: true,
     hotOnly: true
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+  plugins: [
+    new HtmlwebpackPlugin({
+      template: './client/index.html'
+    }),
+    new webpack.HotModuleReplacementPlugin()
+  ]
 };
