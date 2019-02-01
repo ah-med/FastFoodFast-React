@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LoginPage from '../components/auth/LoginPage.jsx';
+import Footer from '../components/common/Footer.jsx';
 import signupUser from '../actions/loginActions';
 
 
@@ -31,12 +32,15 @@ class LoginContainer extends Component {
 
     render() {
         return (
-            <LoginPage
-                submitLoginForm={this.submitFormHandler}
-                handleLoginInput={this.onChangeInputHandler}
-                error={this.props.error}
-                loading={this.props.loading}
-            />
+            <React.Fragment>
+                <LoginPage
+                    submitLoginForm={this.submitFormHandler}
+                    handleLoginInput={this.onChangeInputHandler}
+                    error={this.props.error}
+                    loading={this.props.loading}
+                />
+                <Footer name="signup-footer" />
+            </React.Fragment>
         )
     }
 }
