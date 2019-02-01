@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import AddMealPage from '../components/admin/AddMealPage.jsx';
+import Footer from '../components/common/Footer.jsx';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
 import addMeal from '../actions/adminActions';
 
@@ -48,13 +49,16 @@ class AddMealContainer extends Component {
     }
     render() {
         return (
-            <AddMealPage
-            inputHandler={this.onChangeInputHandler}
-            submitHandler={this.submitFormHandler}
-            fileHandler={this.fileChangeHandler}
-            selectedValue={this.state.category}
-            imageRef={this.uploadedImageRef}
-            />
+            <React.Fragment>
+                <AddMealPage
+                inputHandler={this.onChangeInputHandler}
+                submitHandler={this.submitFormHandler}
+                fileHandler={this.fileChangeHandler}
+                selectedValue={this.state.category}
+                imageRef={this.uploadedImageRef}
+                />
+                <Footer name="signup-footer" />
+            </React.Fragment>
         )
     }
 }
