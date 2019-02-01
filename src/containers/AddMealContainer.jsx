@@ -64,17 +64,6 @@ class AddMealContainer extends Component {
 }
 
 
-// AddMealContainer.propTypes = {
-//     error: PropTypes.object,
-//     loading: PropTypes.bool,
-//     signupAction:PropTypes.func,
-//     history: PropTypes.object
-// };
-
-// const mapStateToProps = state => ({
-//     error: state.auth.error,
-//     loading: state.loading.isLoading,
-// });
 
 const mapDispatchToProps = dispatch => ({
     addMealAction: (mealData) => dispatch(addMeal(mealData)),

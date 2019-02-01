@@ -7,17 +7,19 @@ import {
 import ProtectedRoute from './components/ProtectedRoute.jsx';
 import SignupContainer from './containers/SignupContainer.jsx';
 import LoginContainer from './containers/LoginContainer.jsx';
-import HomePage from './components/home/HomePage.jsx';
+import HomePageContainer from './containers/HomePageContainer.jsx';
 import AddMealContainer from './containers/AddMealContainer.jsx';
+import FoodItemsContainer from './containers/FoodItemsContainer.jsx';
 
 
 const routing = (
   <Router>
     <div>
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={HomePageContainer} />
         <Route path="/signup" component={SignupContainer} />
         <Route path="/login" component={LoginContainer} />
+        <Route path="/fooditems" component={FoodItemsContainer} />
         <ProtectedRoute path="/add-meal" component={AddMealContainer}/>
       </Switch>
     </div>
