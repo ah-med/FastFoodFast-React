@@ -17,7 +17,7 @@ const MobileSideNav = () => {
                     <a href="./user_orders.html">My Orders</a>
                 </li>
                 <li>
-                    <a href="./user_food_items.html">Food Items</a>
+                    <a href="./fooditems">Food Items</a>
                 </li>
             </ul>
         </nav>

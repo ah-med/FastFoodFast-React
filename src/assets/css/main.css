@@ -66,6 +66,28 @@ textarea {
 .fixed {
     position: fixed;
 }
+
+.small-spinner  {
+    border: 5px solid #EFEFEF;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1s linear infinite;
+    border-top: 5px solid #fe8e07;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 /** Food Item card **/
 .food-item-card {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 0px 0px 0 rgba(0, 0, 0, 0.19);

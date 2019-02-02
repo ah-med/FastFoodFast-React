@@ -18,7 +18,7 @@ const NavBar = (props) => {
                         </div>
                         <div id="brand">
                             <h1>
-                                <a href="./index.html">DeLite Fast Food</a>
+                                <a href="/">DeLite Fast Food</a>
                             </h1>
                         </div>
                     </div>
@@ -29,13 +29,13 @@ const NavBar = (props) => {
                                     <NavLink exact to="/">Home</NavLink>
                                 </li>
                                 <li className={(type==="admin") ? "hide": ""}>
-                                    <a href="./user_orders.html">My Orders</a>
+                                    <NavLink to="/userOrders">My Orders</NavLink>
                                 </li>
                                 <li>
-                                    <a href="./user_food_items.html">Food Items</a>
+                                    <NavLink to="/foodItems">Food Items</NavLink>
                                 </li>
                                 <li className={(type==="admin") ? "": "hide"}>
-                                    <a href="./orders.html">Orders</a>
+                                    <NavLink to="/orders">Orders</NavLink>
                                 </li>
                             </ul>
                         </nav>
@@ -44,21 +44,21 @@ const NavBar = (props) => {
                                 <NavLink to="/login">Login </NavLink>
                                  | <NavLink to="/signup">SignUp</NavLink>
                             </span>
-                            <a className={(isAuth) ? "hide": "desktop"} href="./signup.html">
+                            <NavLink className={(isAuth) ? "hide": "desktop"} to="./signup.html">
                                 <img className="mobile" src={accountIcon} alt="account" />
-                            </a>
+                            </NavLink>
                             <span className={(isAuth) ? "desktop": "desktop hide"}>
-                                <a id="logout" href="Javascript:void(0);" onClick={console.log("logout()")}>Logout</a>
+                                <NavLink id="logout" to="Javascript:void(0);" onClick={console.log("logout()")}>Logout</NavLink>
                             </span>
-                            <a href="./login.html">
+                            <NavLink to="./login.html">
                                 <img className="mobile" src={accountIcon} alt="account" />
-                            </a>
+                            </NavLink>
                         </div>
                         <div id="cart-menu" className={(type==="admin") ? "hide": ""}>
-                            <a href="./checkout.html">
+                            <NavLink to="/checkout">
                                 <img src={cartIcon} alt="cart" />
                                 <span id="cart"></span>
-                            </a>
+                            </NavLink>
                         </div>
                     </div>
                 </div>
