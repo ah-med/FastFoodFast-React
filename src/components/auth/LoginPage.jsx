@@ -1,20 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import NavBar from '../common/NavBar.jsx';
+import NavBarContainer from '../../containers/NavBarContainer.jsx';
 import Form from '../common/form/Form.jsx';
 import FormInput from '../common/form/FormInput.jsx';
 import SubmitButton from '../common/form/SubmitButton.jsx';
 import Modal from '../common/modals/Modal.jsx';
 import Loading from '../common/modals/Loading.jsx';
 import MobileSideNav from '../common/modals/MobileSideNav.jsx';
-import AlertBoxContainer from '../../containers/AlertBoxContainer.jsx';
 import '../../assets/css/signup.css';
 
 
 const LoginPage = (props) => {
     const {
-        submitLoginForm, handleLoginInput, error, loading
+        submitLoginForm, handleLoginInput, loading
     } = props
     return (
         <React.Fragment>
@@ -22,7 +21,7 @@ const LoginPage = (props) => {
                 <MobileSideNav />
                 <Loading isLoading={loading} />
             </Modal>
-            <NavBar />
+            <NavBarContainer />
             <section id="signup">
                 <Form formName="login-form" handleFormSubmit={submitLoginForm}>
                     <h3 className="text-center">Login</h3>
@@ -46,7 +45,6 @@ const LoginPage = (props) => {
                     </div>
                 </Form>
             </section>
-            <AlertBoxContainer alertType={(error.description) ? "error":"undefined"} text={error.description} fields={error.fields} />
         </React.Fragment>
     )
 }
@@ -54,7 +52,6 @@ const LoginPage = (props) => {
 LoginPage.propTypes = {
     submitLoginForm: PropTypes.func.isRequired,
     handleLoginInput: PropTypes.func.isRequired,
-    error: PropTypes.any,
     loading: PropTypes.bool
 };
 

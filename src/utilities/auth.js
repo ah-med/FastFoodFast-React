@@ -1,6 +1,6 @@
 export const reDirectLogin = (role, history) => (
     (role === 'user')
-        ? history.push('/user-food-items')
+        ? history.push('/foodItems')
         : history.push('/add-meal')
 );
 

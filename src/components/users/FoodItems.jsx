@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Footer from '../common/Footer.jsx';
-import NavBar from '../common/NavBar.jsx';
+import NavBarContainer from '../../containers/NavBarContainer.jsx';
 import FoodSection from './FoodSection.jsx';
 import '../../assets/css/userFoodItems.css';
 import getCategories from '../../utilities/getFoodCategories';
@@ -12,7 +12,7 @@ const FoodItems = (props) => {
     } = props;
     return (
         <React.Fragment>
-            <NavBar />
+            <NavBarContainer />
             <section id="main">
                 <section id="menu">
                     <h4 className="text-center" onClick="toggleDisplay('menu-container')">Menu</h4>
@@ -33,31 +33,31 @@ const FoodItems = (props) => {
                 <section id="food-menu">
                     <div className="container">
                         <div id="menu-body">
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Continental'
                                 foodItems={getCategories(foodItems, 'Continental')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Drinks'
                                 foodItems={getCategories(foodItems, 'Drinks')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Pastries'
                                 foodItems={getCategories(foodItems, 'Pastries')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Soup'
                                 foodItems={getCategories(foodItems, 'Soup')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Swallow'
                                 foodItems={getCategories(foodItems, 'Swallow')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Traditional'
                                 foodItems={getCategories(foodItems, 'Traditional')}
                             />
-                            <FoodSection 
+                            <FoodSection
                                 sectionName='Protein'
                                 foodItems={getCategories(foodItems, 'Protein')}
                             />

@@ -5,16 +5,16 @@ import HowItWorks from './HowItWorks.jsx';
 import PopularFoodItems from './PopularFoodItems.jsx';
 import FoodCategoriesList from './FoodCategoriesList.jsx';
 import Footer from '../common/Footer.jsx';
-import NavBar from '../common/NavBar.jsx';
+import NavBarContainer from '../../containers/NavBarContainer.jsx';
 import '../../assets/css/index.css';
 
 const HomePage = (props) => {
     return (
         <React.Fragment>
-            <NavBar />
+            <NavBarContainer />
             <IntroSection />
             <HowItWorks />
-            <PopularFoodItems 
+            <PopularFoodItems
                 foodItems={props.popularFoodItems}
             />
             <FoodCategoriesList />

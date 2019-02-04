@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import SignUpPage from '../components/auth/SignUpPage.jsx';
 import Footer from '../components/common/Footer.jsx';
-import signupUser from '../actions/signupActions';
+import { signupUser }from '../actions/authActions';
 
 
 
@@ -22,7 +22,7 @@ class SignupContainer extends Component {
     }
 
     onChangeInputHandler(event) {
-        this.setState({ [event.target.name]: event.target.value });
+        this.setState({ [event.target.name]: event.target.value.trim() });
     }
 
     submitFormHandler(event) {
@@ -38,7 +38,6 @@ class SignupContainer extends Component {
                 <SignUpPage
                     submitSignupForm={this.submitFormHandler}
                     handleSignupInput={this.onChangeInputHandler}
-                    error={this.props.error}
                     loading={this.props.loading}
                 />
                 <Footer name="signup-footer" />
@@ -48,15 +47,13 @@ class SignupContainer extends Component {
 }
 
 SignupContainer.propTypes = {
-    error: PropTypes.object,
     loading: PropTypes.bool,
     signupAction:PropTypes.func,
     history: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-    error: state.auth.error,
-    loading: state.loading.isLoading,
+    loading: state.loading.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({

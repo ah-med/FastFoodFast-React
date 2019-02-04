@@ -7,7 +7,7 @@ import accountIcon from '../../assets/images/icons/account.png';
 import cartIcon from '../../assets/images/icons/cart.png';
 
 
-const NavBar = (props) => {
+const NoAuthNavBar = (props) => {
     const { type, isAuth } = props;
         return (
             <header>
@@ -28,36 +28,21 @@ const NavBar = (props) => {
                                 <li>
                                     <NavLink exact to="/">Home</NavLink>
                                 </li>
-                                <li className={(type==="admin") ? "hide": ""}>
-                                    <NavLink to="/userOrders">My Orders</NavLink>
-                                </li>
                                 <li>
                                     <NavLink to="/foodItems">Food Items</NavLink>
-                                </li>
-                                <li className={(type==="admin") ? "": "hide"}>
-                                    <NavLink to="/orders">Orders</NavLink>
                                 </li>
                             </ul>
                         </nav>
                         <div id="auth">
-                            <span  className={(isAuth) ? "hide": "desktop"}>
+                            <span  className="desktop">
                                 <NavLink to="/login">Login </NavLink>
                                  | <NavLink to="/signup">SignUp</NavLink>
                             </span>
-                            <NavLink className={(isAuth) ? "hide": "desktop"} to="./signup.html">
+                            <NavLink className={(isAuth) ? "hide": "desktop"} to="./signup">
                                 <img className="mobile" src={accountIcon} alt="account" />
                             </NavLink>
-                            <span className={(isAuth) ? "desktop": "desktop hide"}>
-                                <NavLink id="logout" to="Javascript:void(0);" onClick={console.log("logout()")}>Logout</NavLink>
-                            </span>
                             <NavLink to="./login.html">
                                 <img className="mobile" src={accountIcon} alt="account" />
-                            </NavLink>
-                        </div>
-                        <div id="cart-menu" className={(type==="admin") ? "hide": ""}>
-                            <NavLink to="/checkout">
-                                <img src={cartIcon} alt="cart" />
-                                <span id="cart"></span>
                             </NavLink>
                         </div>
                     </div>
@@ -66,9 +51,9 @@ const NavBar = (props) => {
         )
 }
 
-NavBar.propTypes = {
+NoAuthNavBar.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     type: PropTypes.string.isRequired,
 };
 
-export default NavBar;
+export default NoAuthNavBar;

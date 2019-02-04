@@ -4,6 +4,11 @@ body {
 .text-center {
     text-align: center;
 }
+
+section#signup {
+    height: 81vh;
+}
+
 /** Form **/
 form {
     margin: 0 auto;
