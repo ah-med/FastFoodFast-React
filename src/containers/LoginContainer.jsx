@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LoginPage from '../components/auth/LoginPage.jsx';
 import Footer from '../components/common/Footer.jsx';
-import signupUser from '../actions/loginActions';
+import { loginUser } from '../actions/authActions';
 
 
 
@@ -36,7 +36,6 @@ class LoginContainer extends Component {
                 <LoginPage
                     submitLoginForm={this.submitFormHandler}
                     handleLoginInput={this.onChangeInputHandler}
-                    error={this.props.error}
                     loading={this.props.loading}
                 />
                 <Footer name="signup-footer" />
@@ -46,19 +45,17 @@ class LoginContainer extends Component {
 }
 
 LoginContainer.propTypes = {
-    error: PropTypes.object,
     loading: PropTypes.bool,
     loginAction:PropTypes.func,
     history: PropTypes.object
 };
 
 const mapStateToProps = state => ({
-    error: state.auth.error,
-    loading: state.loading.isLoading,
+    loading: state.loading.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({
-    loginAction: (userData, history) => dispatch(signupUser(userData, history)),
+    loginAction: (userData, history) => dispatch(loginUser(userData, history)),
 });
 
 

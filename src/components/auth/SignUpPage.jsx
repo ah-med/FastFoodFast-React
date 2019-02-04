@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import NavBar from '../common/NavBar.jsx';
+import NavBarContainer from '../../containers/NavBarContainer.jsx';
 import Form from '../common/form/Form.jsx';
 import FormInput from '../common/form/FormInput.jsx';
 import SubmitButton from '../common/form/SubmitButton.jsx';
 import Modal from '../common/modals/Modal.jsx';
 import Loading from '../common/modals/Loading.jsx';
 import MobileSideNav from '../common/modals/MobileSideNav.jsx';
-import AlertBoxContainer from '../../containers/AlertBoxContainer.jsx';
-// import AlertBox from '../common/AlertBox.jsx';
 import '../../assets/css/signup.css';
 
 
 const SignUpPage = (props) => {
     const {
-        submitSignupForm, handleSignupInput, error, loading
+        submitSignupForm, handleSignupInput, loading
     } = props
     return (
         <React.Fragment>
@@ -23,7 +21,7 @@ const SignUpPage = (props) => {
                 <MobileSideNav />
                 <Loading isLoading={loading} />
             </Modal>
-            <NavBar />
+            <NavBarContainer />
             <section id="signup">
                 <Form formName="signup-form" handleFormSubmit={submitSignupForm}>
                     <h3 className="text-center">Create an account</h3>
@@ -59,7 +57,6 @@ const SignUpPage = (props) => {
                     </div>
                 </Form>
             </section>
-            <AlertBoxContainer alertType={(error.description) ? "error":"undefined"} text={error.description} fields={error.fields} />
         </React.Fragment>
     )
 }
@@ -67,7 +64,6 @@ const SignUpPage = (props) => {
 SignUpPage.propTypes = {
     submitSignupForm: PropTypes.func.isRequired,
     handleSignupInput: PropTypes.func.isRequired,
-    error: PropTypes.any,
     loading: PropTypes.bool
 };
 

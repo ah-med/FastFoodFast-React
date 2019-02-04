@@ -1,21 +1,21 @@
 import React from 'react';
-import NavBar from '../common/NavBar.jsx';
+import NavBarContainer from '../../containers/NavBarContainer.jsx';
 import Form from '../common/form/Form.jsx';
 import FormInput from '../common/form/FormInput.jsx';
 import SubmitButton from '../common/form/SubmitButton.jsx';
 import '../../assets/css/addMeal.css';
 
 const AddMealPage = (props) => {
-    const { 
-        inputHandler, 
-        submitHandler, 
+    const {
+        inputHandler,
+        submitHandler,
         fileHandler,
         selectedValue,
         imageRef
     } = props;
     return (
         <div className="addMealPage">
-            <NavBar
+            <NavBarContainer
                 isAuth={true}
                 type='admin'
             />
@@ -34,9 +34,9 @@ const AddMealPage = (props) => {
                                     <input id="upload-image" onChange={fileHandler} className="form-input" type="file" name="file" accept="image/*" required />
                                 </div>
                                 <div>
-                                    <img 
-                                    id="uploaded"  
-                                    ref={imageRef}
+                                    <img
+                                        id="uploaded"
+                                        ref={imageRef}
                                     />
                                 </div>
                             </div>
