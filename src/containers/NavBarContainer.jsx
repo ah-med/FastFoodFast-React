@@ -26,7 +26,7 @@ class NavBarContainer extends Component {
 
     render() {
         const {
-            isAuthenticated, userRole
+            isAuthenticated, userRole, totalCartItems
         } = this.props;
         return (
 
@@ -34,6 +34,7 @@ class NavBarContainer extends Component {
             (
                 <AuthNavBar
                     role={userRole} 
+                    totalCartItems={totalCartItems}
                 />
             ) 
             : 
@@ -47,12 +48,14 @@ class NavBarContainer extends Component {
 
 NavBarContainer.propTypes = {
     isAuthenticated: PropTypes.bool.isRequired,
-    userRole: PropTypes.string.isRequired
+    userRole: PropTypes.string.isRequired,
+    totalCartItems: PropTypes.number.isRequired
 };
 
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
-    userRole: state.auth.role
+    userRole: state.auth.role,
+    totalCartItems: state.cart.cart.length
 });
 
 const mapDispatchToProps = dispatch => ({
