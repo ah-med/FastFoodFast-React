@@ -5,7 +5,7 @@ import FoodCard from '../common/FoodCard.jsx';
 const FoodSection = (props) => {
     const {
         foodItems,
-        sectionName
+        sectionName,
     } = props;
     const foodItem = foodItems.map(food => (
         <FoodCard
@@ -14,7 +14,7 @@ const FoodSection = (props) => {
             price={food.price}
             foodId={food.food_id}
             category={food.category}
-            key={food.category}
+            key={food.category}            
         />
     ));
     return (

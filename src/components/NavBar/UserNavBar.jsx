@@ -8,7 +8,7 @@ import cartIcon from '../../assets/images/icons/cart.png';
 
 
 const UserNavBar = (props) => {
-    const { type, isAuth } = props;
+    const { type, isAuth, totalCartItems } = props;
         return (
             <header>
                 <div className="container">
@@ -50,7 +50,7 @@ const UserNavBar = (props) => {
                         <div id="cart-menu" className={(type==="admin") ? "hide": ""}>
                             <NavLink to="/checkout">
                                 <img src={cartIcon} alt="cart" />
-                                <span id="cart"></span>
+                                <span id="cart">{totalCartItems}</span>
                             </NavLink>
                         </div>
                     </div>
@@ -62,6 +62,7 @@ const UserNavBar = (props) => {
 UserNavBar.propTypes = {
     isAuth: PropTypes.bool.isRequired,
     type: PropTypes.string.isRequired,
+    totalCartItems: PropTypes.number.isRequired
 };
 
 export default UserNavBar;

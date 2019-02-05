@@ -5,12 +5,13 @@ import AdminNavBar from './AdminNavBar.jsx';
 
 
 const AuthNavBar = (props) => {
-    const { role } = props;
+    const { role, totalCartItems } = props;
     return (
 
         (role === 'user') ?
         (
             <UserNavBar
+             totalCartItems={totalCartItems}
             />
         ) 
         : 
@@ -22,7 +23,8 @@ const AuthNavBar = (props) => {
 }
 
 AuthNavBar.propTypes = {
-    role: PropTypes.string.isRequired
+    role: PropTypes.string.isRequired,
+    totalCartItems: PropTypes.number
 };
 
 

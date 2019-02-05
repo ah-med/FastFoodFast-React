@@ -2,3 +2,4 @@ export const LOADING_START = 'LOADING_START';
 export const LOADING_STOP = 'LOADING_STOP';
 export const AUTHENTICATED = 'AUTHENTICATED';
 export const GET_FOODITEMS = 'GET_FOODITEMS';
+export const UPDATE_CART = 'UPDATE_CART';
