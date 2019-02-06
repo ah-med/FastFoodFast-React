@@ -6,7 +6,7 @@ import { getFoodItems } from '../actions/userFoodItemsActions';
 import getPopularFoodItems from '../utilities/getPopularFoodItems';
 
 
-class HomePageContainer extends Component {
+export class HomePageContainer extends Component {
 
     componentDidMount() {
         this.props.getAllFoodItems();
