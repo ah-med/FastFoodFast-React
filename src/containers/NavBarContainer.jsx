@@ -38,7 +38,7 @@ NavBarContainer.propTypes = {
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated,
     userRole: state.auth.role,
-    totalCartItems: state.cart.cart.length
+    totalCartItems: state.cart.length
 });
 
 export default connect(mapStateToProps, null)(NavBarContainer);
