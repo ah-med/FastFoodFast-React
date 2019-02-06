@@ -7,7 +7,7 @@ import { signupUser }from '../actions/authActions';
 
 
 
-class SignupContainer extends Component {
+export class SignupContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {

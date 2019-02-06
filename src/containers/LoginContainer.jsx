@@ -7,7 +7,7 @@ import { loginUser } from '../actions/authActions';
 
 
 
-class LoginContainer extends Component {
+export class LoginContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {

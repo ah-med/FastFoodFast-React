@@ -2,7 +2,7 @@ import axios from 'axios';
 import { baseUrl } from '../actions/constants';
 
 
-const request = axios.create({
+export const request = axios.create({
   baseURL: baseUrl,
   headers: {
     'Content-Type': 'application/json',
@@ -37,21 +37,4 @@ export const Post = async (route, data) => {
   }
 };
 
-export const Put = async (route, data) => {
-  try {
-    const response = await request.put(route, data);
-    return response.data;
-  } catch (error) {
-    return error.response ? error.response.data : error;
-  }
-};
-
-export const Delete = async (route, data) => {
-  try {
-    const response = await request.delete(route, data);
-    return response.data;
-  } catch (error) {
-    return error.response.data;
-  }
-};
 

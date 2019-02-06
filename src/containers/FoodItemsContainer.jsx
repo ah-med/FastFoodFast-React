@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import FoodItems from '../components/users/FoodItems.jsx';
 import { getFoodItems } from '../actions/userFoodItemsActions';
 
-class FoodItemsContainer extends Component {
+export class FoodItemsContainer extends Component {
 
     componentDidMount() {
         this.props.getAllFoodItems();

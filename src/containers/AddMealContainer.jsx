@@ -5,9 +5,7 @@ import Footer from '../components/common/Footer.jsx';
 import uploadImageCloudinary from '../utilities/cloudinaryUpload';
 import addMeal from '../actions/adminActions';
 
-
-
-class AddMealContainer extends Component {
+export class AddMealContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
