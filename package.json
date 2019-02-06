@@ -12,7 +12,8 @@
     "build:server": "babel server.js -d dist",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:coverage": "jest --coverage --colors"
+    "test:coverage": "jest --coverage",
+    "coverage": "jest --coverage && cat ./coverage/lcov.info | coveralls" 
   },
   "repository": {
     "type": "git",
