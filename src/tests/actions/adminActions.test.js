@@ -15,6 +15,12 @@ describe('Unit tests for the auth actions', () => {
             const response = {
                 data: true
             }
+            const mealData = {
+                foodName: '',
+                price: 5,
+                category: '',
+                imageUrl: ''
+            }
             const startLoading = {
                 type: types.LOADING_START
             };
@@ -24,10 +30,14 @@ describe('Unit tests for the auth actions', () => {
           const stubPostMethod = sinon.stub(axiosRequests, 'Post').returns(response);
           const stubToastr = sinon.stub(toastr, 'success').returns(response);
           const store = mockStore({});
-          store.dispatch(addMeal()).then(() => {
-            expect(store.getActions()).toMatchObject(startLoading);
+          store.dispatch(addMeal(mealData)).then(() => {
+            expect(store.getActions()).toEqual(
+                expect.arrayContaining([startLoading])
+                );
             stubPostMethod.restore();
-            expect(store.getActions()).toMatchObject(stopLoading);
+            expect(store.getActions()).toEqual(
+                expect.arrayContaining([stopLoading])
+                );
             stubPostMethod.restore();
             stubToastr.restore();
           });
