@@ -8,7 +8,7 @@ import { toggleCheckOut, addCartItem, removeCartItem } from '../../actions/userO
 import getTotalAmount from '../../utilities/cart';
 
 
-class FoodCard extends Component {
+export class FoodCard extends Component {
     constructor(props) {
         super(props);
         this.state = {
