@@ -4,7 +4,7 @@ import { toastrOptions } from '../actions/constants';
 
 
 
-const uploadImageCloudinary = async (value) => {
+export const uploadImageCloudinary = async (value) => {
   try {
     const formData = new FormData();
     formData.append('upload_preset', 'zeooiv7x');

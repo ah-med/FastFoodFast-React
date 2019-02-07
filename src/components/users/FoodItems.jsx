@@ -15,7 +15,7 @@ const FoodItems = (props) => {
             <NavBarContainer />
             <section id="main">
                 <section id="menu">
-                    <h4 className="text-center" onClick="toggleDisplay('menu-container')">Menu</h4>
+                    <h4 className="text-center" onClick={() => {}}>Menu</h4>
                     <div id="menu-container" className="container">
                         <nav id="menu-header">
                             <ul id="menu-list">

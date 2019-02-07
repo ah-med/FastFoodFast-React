@@ -128,8 +128,8 @@ textarea {
     padding: 0 10px;
 }
 
-.add-cart input::-webkit-inner-spin-button,
-.add-cart input::-webkit-outer-spin-button
+.add-cart span::-webkit-inner-spin-button,
+.add-cart span::-webkit-outer-spin-button
 {
   -webkit-appearance: none;
   margin: 0;
@@ -138,11 +138,25 @@ textarea {
     display: flex;    
 }
 
-.add-cart input {
+.add-cart span {
     width: 30px;
     text-align: center;
     margin:0;
     height: 20px;
+    /* from*/
+    -webkit-appearance: textfield;
+    background-color: white;
+    -webkit-rtl-ordering: logical;
+    cursor: text;
+    padding: 1px;
+    border-width: 2px;
+    border-style: inset;
+    border-top-style: inset;
+    border-right-style: inset;
+    border-bottom-style: inset;
+    border-left-style: inset;
+    border-color: initial;
+    border-image: initial;
 }
 
 .add-cart button:focus {

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import AddMealPage from '../components/admin/AddMealPage.jsx';
 import Footer from '../components/common/Footer.jsx';
-import uploadImageCloudinary from '../utilities/cloudinaryUpload';
+import { uploadImageCloudinary } from '../utilities/cloudinaryUpload';
 import addMeal from '../actions/adminActions';
 
 export class AddMealContainer extends Component {

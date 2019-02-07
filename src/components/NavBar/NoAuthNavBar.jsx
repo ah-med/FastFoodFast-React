@@ -8,13 +8,13 @@ import cartIcon from '../../assets/images/icons/cart.png';
 
 
 const NoAuthNavBar = (props) => {
-    const { type, isAuth } = props;
+    const { isAuth } = props;
         return (
             <header>
                 <div className="container">
                     <div className="left">
                         <div id="menu" className="mobile">
-                            <img src={menuIcon} alt="menu" onClick={'console.log("Hello Mobile")'} />
+                            <img src={menuIcon} alt="menu" onClick={() => {}} />
                         </div>
                         <div id="brand">
                             <h1>
@@ -52,8 +52,7 @@ const NoAuthNavBar = (props) => {
 }
 
 NoAuthNavBar.propTypes = {
-    isAuth: PropTypes.bool.isRequired,
-    type: PropTypes.string.isRequired,
+    isAuth: PropTypes.bool,
 };
 
 export default NoAuthNavBar;

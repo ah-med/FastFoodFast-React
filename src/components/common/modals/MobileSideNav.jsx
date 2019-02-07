@@ -1,15 +1,11 @@
 import React from 'react';
 
 
-const toggleModal = () => {
-    'console.log("toggled");'
-}
-
 const MobileSideNav = () => {
     return (
         <nav id="navModal" className="mobile modal hide">
             <ul>
-                <span className="click" onClick={toggleModal('navModal')}>X</span>
+                <span className="click" onClick={() => {}}>X</span>
                 <li>
                     <a href="./index.html">Home</a>
                 </li>

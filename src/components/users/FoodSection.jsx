@@ -14,7 +14,7 @@ const FoodSection = (props) => {
             price={food.price}
             foodId={food.food_id}
             category={food.category}
-            key={food.category}            
+            key={food.food_id}            
         />
     ));
     return (

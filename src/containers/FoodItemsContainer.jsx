@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import FoodItems from '../components/users/FoodItems.jsx';
+import PlaceOrderContainer from './PlaceOrderContainer.jsx';
 import { getFoodItems } from '../actions/userFoodItemsActions';
 
 export class FoodItemsContainer extends Component {
@@ -11,9 +12,12 @@ export class FoodItemsContainer extends Component {
     }
     render() {
         return (
-            <FoodItems
-                foodItems={this.props.foodItems.foodItems}
-            />
+            <React.Fragment>
+                <FoodItems
+                    foodItems={this.props.foodItems}
+                />
+                <PlaceOrderContainer />
+            </React.Fragment>
         )
     }
 }
@@ -24,7 +28,7 @@ FoodItemsContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    foodItems: state.foodItems
+    foodItems: state.foodItems.foodItems
 });
 
 const mapDispatchToProps = dispatch => ({

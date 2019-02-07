@@ -10,11 +10,19 @@ import './assets/css/main.css';
 
 const history = createBrowserHistory();
 const store = configureStore();
+const root = document.getElementById("root");
 
-ReactDOM.render(
-    <Provider store={store}>
-        <App history={history}>
-            {routing}
-        </App>
-    </Provider>, document.getElementById("root")
-    );
+const renderToDOM = () => {
+    if (root !== null) {
+        ReactDOM.render(
+            <Provider store={store}>
+                <App history={history}>
+                    {routing}
+                </App>
+            </Provider>, root
+        );
+    }
+}
+
+renderToDOM();
+export default renderToDOM;

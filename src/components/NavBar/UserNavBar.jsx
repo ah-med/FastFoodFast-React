@@ -14,7 +14,7 @@ const UserNavBar = (props) => {
                 <div className="container">
                     <div className="left">
                         <div id="menu" className="mobile">
-                            <img src={menuIcon} alt="menu" onClick={'console.log("Hello Mobile")'} />
+                            <img src={menuIcon} alt="menu" onClick={() => {}} />
                         </div>
                         <div id="brand">
                             <h1>
@@ -41,7 +41,7 @@ const UserNavBar = (props) => {
                                 <img className="mobile" src={accountIcon} alt="account" />
                             </NavLink>
                             <span className={(isAuth) ? "desktop": "desktop hide"}>
-                                <NavLink id="logout" to="Javascript:void(0);" onClick={console.log("logout()")}>Logout</NavLink>
+                                <NavLink id="logout" to="Javascript:void(0);" onClick={() => {}}>Logout</NavLink>
                             </span>
                             <NavLink to="./login.html">
                                 <img className="mobile" src={accountIcon} alt="account" />
