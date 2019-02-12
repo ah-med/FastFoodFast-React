@@ -80,6 +80,12 @@ export class FoodCard extends Component {
         }
     }
 
+    addCheckoutButton = (category) => {
+        if (category !== 'Cart Items') {
+            return <a className="action-btn" href="Javascript:void(0);" onClick={this.handleOrderNow}>Checkout</a>
+        }
+    }
+
     render() {
         const {
             foodName,
@@ -99,10 +105,10 @@ export class FoodCard extends Component {
                 <div className="action" id={foodId}>
                     <div className="add-cart">
                         <button id="minus" onClick={this.handleRemoveFromCart} className="minus click">-</button>
-                        <span>{this.state.quantity}</span>
+                        <span>{this.props.quantity || this.state.quantity}</span>
                         <button id="plus" onClick={this.handleAddToCart} className="plus click">+</button>
                     </div>
-                    <a className="action-btn" href="Javascript:void(0);" onClick={this.handleOrderNow}>Checkout</a>
+                    {this.addCheckoutButton(category)}
                 </div>
             </div>
         );
@@ -116,12 +122,15 @@ FoodCard.propTypes = {
     foodId: PropTypes.number.isRequired,
     category: PropTypes.string.isRequired,
     cart: PropTypes.arrayOf(PropTypes.object),
-    checkOutCartAction: PropTypes.func
+    checkOutCartAction: PropTypes.func,
+    quantity: PropTypes.number,
+    addCartItemAction: PropTypes.func,
+    removeCartItemAction: PropTypes.func
 };
 
 
 const mapStateToProps = state => ({
-    cart: state.cart
+    cart: state.cart      
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -41,7 +41,7 @@ export const placeOrder = (cart) => async (dispatch) => {
     if (orderResponse.error) {
         // dispatch stop loading
         // if api fail dispatch place_order_fail and display error message
-        toastr.error('Please login to an place order');
+        toastr.error('Please login to place order');
         toastr.options = toastrOptions;
     } else {
         toastr.success('Order placed successfully!');
