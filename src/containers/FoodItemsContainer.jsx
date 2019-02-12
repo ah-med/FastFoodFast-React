@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import FoodItems from '../components/users/FoodItems.jsx';
 import PlaceOrderContainer from './PlaceOrderContainer.jsx';
 import { getFoodItems } from '../actions/userFoodItemsActions';
+import Loading from '../components/common/modals/Loading.jsx';
 
 export class FoodItemsContainer extends Component {
 
@@ -13,6 +14,7 @@ export class FoodItemsContainer extends Component {
     render() {
         return (
             <React.Fragment>
+                <Loading isLoading={this.props.loading} />
                 <FoodItems
                     foodItems={this.props.foodItems}
                 />
@@ -24,11 +26,13 @@ export class FoodItemsContainer extends Component {
 
 FoodItemsContainer.propTypes = {
     foodItems: PropTypes.arrayOf(PropTypes.object),
-    getAllFoodItems: PropTypes.func.isRequired
+    getAllFoodItems: PropTypes.func.isRequired,
+    loading: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
-    foodItems: state.foodItems.foodItems
+    foodItems: state.foodItems.foodItems,
+    loading: state.loading.isLoading
 });
 
 const mapDispatchToProps = dispatch => ({

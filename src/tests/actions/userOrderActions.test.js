@@ -1,6 +1,13 @@
+import sinon from 'sinon';
+import toastr from 'toastr';
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk';
 import * as types from '../../actions/types';
-import { addCartItem, removeCartItem, toggleCheckOut  } from '../../actions/userOrderActions';
+import * as axiosRequest from '../../utilities/axiosRequests';
+import { addCartItem, removeCartItem, toggleCheckOut, placeOrder  } from '../../actions/userOrderActions';
 
+const middlewares = [thunk];
+const mockStore = configureMockStore(middlewares);
 
 describe('Unit tests for the auth actions', () => {
     describe('Unit tests for the user Orders action creators', () => {
@@ -33,6 +40,33 @@ describe('Unit tests for the auth actions', () => {
 
             expect(toggleCheckOut(totalAmount))
               .toMatchObject(expectedAction);
+          });
+          it('should send an error for place order', async () => {
+            const initialState = {
+                isCheckOut: false,
+                totalAmount: null
+              };
+            const spyToastrError = sinon.spy(toastr, 'error');
+            const store = mockStore(initialState);
+            await store.dispatch(placeOrder([]));
+            expect(spyToastrError.callCount).toBe(1);
+            spyToastrError.restore();
+          });
+          it('should successfully place an order', async () => {
+            const initialState = {
+                isCheckOut: false,
+                totalAmount: null
+              };
+            const orderResponse = {
+                error: false
+            }
+            const spyToastrSuccess = sinon.spy(toastr, 'success');
+            const stubPostRequest = sinon.stub(axiosRequest, 'Post').returns(orderResponse);
+            const store = mockStore(initialState);
+            await store.dispatch(placeOrder([]));
+            expect(spyToastrSuccess.callCount).toBe(1);
+            spyToastrSuccess.restore();
+            stubPostRequest.restore();
           });
     })
 })

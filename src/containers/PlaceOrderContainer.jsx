@@ -48,6 +48,7 @@ export class PlaceOrderContainer extends Component {
                 address={this.state.address}
                 phoneNumber={this.state.phoneNo}
                 inputChangeHandler={this.handleInputChange}
+                cartItems={[...this.props.cart]}
             />
         )
     }
@@ -55,12 +56,16 @@ export class PlaceOrderContainer extends Component {
 
 PlaceOrderContainer.propTypes = {
     cart: PropTypes.arrayOf(PropTypes.object),
+    checkOutCartAction: PropTypes.func.isRequired,
+    isCheckOut: PropTypes.bool.isRequired,
+    totalAmount: PropTypes.number,
+    placeOrderAction: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({
     cart: state.cart,
     isCheckOut: state.cartStatus.isCheckOut,
-    totalAmount: state.cartStatus.totalAmount
+    totalAmount: state.cartStatus.totalAmount,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -11,7 +11,8 @@ describe('Test to successfully render <PlaceOrder />', () => {
         placeOrderHandler: () => {},
         address: '',
         phoneNumber: 76878,
-        inputChangeHandler: () => {}
+        inputChangeHandler: () => {},
+        cartItems: []
   };
 
   let wrapper = shallow(<PlaceOrder {...propsObject}/>);

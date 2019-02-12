@@ -15,7 +15,7 @@ import {
 } from './types';
 
 
-const startLoading = {
+export const startLoading = {
     type: LOADING_START
 };
 const isAuthenticated = (role) => {
@@ -25,7 +25,7 @@ const isAuthenticated = (role) => {
         role
     }
 };
-const stopLoading = {
+export const stopLoading = {
     type: LOADING_STOP
 };
 

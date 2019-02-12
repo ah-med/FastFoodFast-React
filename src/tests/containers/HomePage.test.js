@@ -8,9 +8,7 @@ describe('Test to successfully render <AddMealContainer />', () => {
     
   const propsObject = {
     getAllFoodItems: jest.fn(() => {}),
-    foodItems: {
-        foodItems: []
-    },
+    foodItems: [],
   };
   wrapper = shallow(<HomePageContainer{...propsObject}/>);
   it('renders the <HomePageContainer /> components', () => {

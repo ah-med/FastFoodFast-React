@@ -12,7 +12,7 @@ export class HomePageContainer extends Component {
         this.props.getAllFoodItems();
     }
     render() {
-        const popularFoodItems = getPopularFoodItems(this.props.foodItems.foodItems);
+        const popularFoodItems = getPopularFoodItems(this.props.foodItems);
         return (
             <HomePage
                 popularFoodItems={popularFoodItems}
@@ -27,7 +27,7 @@ HomePageContainer.propTypes = {
 };
 
 const mapStateToProps = state => ({
-    foodItems: state.foodItems
+    foodItems: state.foodItems.foodItems
 });
 
 const mapDispatchToProps = dispatch => ({
